@@ -9,15 +9,26 @@
 
     <!-- Define your beans here -->
 
-    <!-- define the dependency -->
+    <!-- define the dependencies -->
     <bean id="myFortuneService"
           class="ru.voskhod.springdemoone.HappyFortuneService">
+    </bean>
+
+    <bean id="myFlexService"
+          class="ru.voskhod.springdemoone.ClassyFortuneService">
     </bean>
 
     <bean id="myCoach" 
           class="ru.voskhod.springdemoone.TrackCoach"
           scope="prototype">
         <constructor-arg ref="myFortuneService"/>
+    </bean>
+
+    <bean id="myFlexCoach"
+          class="ru.voskhod.springdemoone.FootballCoach"
+          scope="prototype">
+
+        <constructor-arg name="fortuneService" ref="myFlexService"/>
     </bean>
 
 </beans>
