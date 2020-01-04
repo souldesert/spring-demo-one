@@ -10,7 +10,7 @@ public class SpringHelloApp {
 
 
         // retrieve bean from spring container
-        Coach coach = context.getBean("myCoach", Coach.class);
+        Coach coach = context.getBean("myFlexCoach", Coach.class);
 
         // call methods on the bean
         System.out.println(coach.getDailyWorkout());

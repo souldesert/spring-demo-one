@@ -26,6 +26,10 @@
           class="ru.voskhod.springdemoone.HappyFortuneService">
     </bean>
 
+    <bean id="myFlexService"
+          class="ru.voskhod.springdemoone.ClassyFortuneService">
+    </bean>
+
     <bean id="myCoach" 
           class="ru.voskhod.springdemoone.TrackCoach">
         <constructor-arg ref="myFortuneService"/>
@@ -39,6 +43,12 @@
         <property name="emailAddress" value="${foo.email}"/>
         <property name="team" value="${foo.team}"/>
 
+    </bean>
+
+    <bean id="myFlexCoach"
+          class="ru.voskhod.springdemoone.FootballCoach">
+
+        <constructor-arg name="fortuneService" ref="myFlexService"/>
     </bean>
 
 </beans>
